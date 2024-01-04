@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using IdentityDemoProject.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace IdentityDemoProject.Data
@@ -9,6 +10,6 @@ namespace IdentityDemoProject.Data
         {
         }
 
-
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     }
 }
