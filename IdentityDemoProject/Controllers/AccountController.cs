@@ -76,6 +76,11 @@ namespace IdentityDemoProject.Controllers
                     return LocalRedirect(returnurl);
                 }
 
+                if (result.IsLockedOut)
+                {
+                    ModelState.AddModelError(string.Empty, "You try to access with a wrong password so many times. Try again in 1 minute");
+                }
+
                 ModelState.AddModelError(string.Empty, "Invalid username or password");
             }
 

@@ -25,6 +25,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireNonAlphanumeric = true;
     options.SignIn.RequireConfirmedEmail = false;
     options.Lockout.MaxFailedAccessAttempts = 3;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
 });
 
 var app = builder.Build();
